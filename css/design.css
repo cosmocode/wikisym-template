@@ -98,6 +98,7 @@
 
 /*____________ user tools ____________*/
 
+/*
 #dokuwiki__usertools {
     position: absolute;
     top: 0;
@@ -108,7 +109,6 @@
 }
 #dokuwiki__usertools ul,
 #dokuwiki__pagetools ul {
-    /* imitate #dokuwiki__site */
     margin: 0 auto;
     max-width: 64em;
     padding: 0 1em;
@@ -120,9 +120,11 @@
     float: left;
     margin-left: 0;
 }
+*/
 
 /*____________ page tools ____________*/
 
+/*
 #dokuwiki__pagetools {
     position: fixed;
     bottom: 0;
@@ -152,7 +154,7 @@
     top: 0;
     right: 0;
 }
-
+*/
 
 /* sidebar
 ********************************************************************/

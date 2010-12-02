@@ -129,7 +129,7 @@ a {
 }
 a:link, a:visited {
     text-decoration: none;
-    color: #00c; /* §colour */
+    color: __existing__; /* §colour */
 }
 a:link:hover, a:visited:hover,
 a:link:focus, a:visited:focus,
@@ -140,7 +140,7 @@ a:link:focus, a:visited:focus {
     outline: 1px dotted;
 }
 a:link:active, a:visited:active {
-    color: #c00; /* §colour */
+    color: __existing__; /* §colour */
 }
 
 

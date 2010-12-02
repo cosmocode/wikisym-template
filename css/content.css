@@ -96,6 +96,14 @@
     margin: 0;
 }
 
+/* lists */
+.dokuwiki ul li {
+    color: __existing__;
+}
+.dokuwiki ul li div.li {
+    color: __text__;
+}
+
 
 /*____________ misc ____________*/
 

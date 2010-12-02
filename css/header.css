@@ -1,0 +1,70 @@
+/* Header */
+#dokuwiki__header p.claim {
+    text-align: center;
+    color: #424242;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2em;
+}
+
+#dokuwiki__header h1 {
+    float: left;
+}
+
+#dokuwiki__header div.more {
+    height: 200px;
+    background: transparent url(pix/bridge.png) no-repeat 320px top;
+    text-align: right;
+    font-family: serif; //FIXME
+}
+
+#dokuwiki__header p.loc {
+    font-size: 1.8em;
+}
+
+#dokuwiki__header p.until {
+    line-height: 1em;
+    font-size: 1.4em;
+    font-style: italic;
+}
+
+#dokuwiki__header p.until span {
+    font-size: 1.6em;
+    font-style: normal;
+}
+
+/* Navigation */
+#dokuwiki__navigation {
+    font-family: serif; //FIXME
+    font-size: 1.6em;
+    border-top: 4px solid __border__;
+    border-bottom: 4px solid __border__;
+    margin: 0.5em 0 2em 0;
+    background-color: #fafafa;
+}
+
+#dokuwiki__navigation div.pad {
+    display: table; //FIXME we need better solution here
+    margin: 0 auto;
+    padding: 0.1em 0;
+}
+
+#dokuwiki__navigation ul {
+    padding: 0;
+}
+
+#dokuwiki__navigation li {
+    float: left;
+}
+
+/* Footer */
+#wikisym__footer {
+    text-align: right;
+    border-top: 8px solid __border__;
+    border-bottom: 8px solid __border__;
+    margin: 2em 0;
+    color: #747474;
+    padding: 1em 0;
+    background-color: #fafafa;
+}

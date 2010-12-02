@@ -9,7 +9,6 @@
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 @require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 
-$showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER['REMOTE_USER'] );
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
@@ -36,84 +35,91 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
         <!-- ********** HEADER ********** -->
         <div id="dokuwiki__header"><div class="pad">
+            <p class="claim">7th International Symposium on Wikis and Open Collaboration</p>
 
-            <div class="headings">
-                <h1><?php tpl_link(wl(),$conf['title'],'id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
-                <?php /* how to insert logo instead (if no CSS image replacement technique is used):
-                        upload your logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly:
-                        tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') */ ?>
-                <?php if (tpl_getConf('tagline')): ?>
-                    <p class="claim"><?php echo tpl_getConf('tagline') ?></p>
-                <?php endif ?>
+            <h1><?php tpl_link(wl(),'<img src="'.DOKU_TPL.'pix/logo.png" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
+            <div class="more">
+                <p class="loc">
+                    Mountain View, California<br />
+                    October 3-5, 2011
+                </p>
 
-                <ul class="a11y">
-                    <li><a href="#dokuwiki__content"><?php echo tpl_getLang('skip_to_content') ?></a></li>
-                </ul>
-                <div class="clearer"></div>
+                <p class="until">
+                    <span><?php echo round((strtotime('2011-10-03')-time())/(60*60*24)) ?></span><br />
+                    days left
+                </p>
             </div>
 
-            <div class="tools">
-                <!-- USER TOOLS -->
-                <?php if ($conf['useacl'] && $showTools): ?>
-                    <div id="dokuwiki__usertools">
-                        <h3 class="a11y"><?php echo tpl_getLang('user_tools') ?></h3>
-                        <ul>
-                            <?php /* the optional second parameter of tpl_action() switches between a link and a button,
-                                     e.g. a button inside a <li> would be: tpl_action('edit',0,'li') */
-                                if ($_SERVER['REMOTE_USER']) {
-                                    echo '<li class="user">';
-                                    tpl_userinfo(); /* 'Logged in as ...' */
-                                    echo '</li>';
-                                }
-                                tpl_action('admin', 1, 'li');
-                                if (tpl_getConf('userNS')) {
-                                    _tpl_userpage(tpl_getConf('userNS'),1,'li');
-                                }
-                                tpl_action('profile', 1, 'li');
-                                tpl_action('login', 1, 'li');
-                            ?>
-                        </ul>
-                    </div>
-                <?php endif ?>
-
-                <!-- SITE TOOLS -->
-                <div id="dokuwiki__sitetools">
-                    <h3 class="a11y"><?php echo tpl_getLang('site_tools') ?></h3>
-                    <?php tpl_searchform() ?>
-                    <ul>
-                        <?php
-                            tpl_action('recent', 1, 'li');
-                            tpl_action('index', 1, 'li');
-                        ?>
-                    </ul>
-                </div>
-
-            </div>
             <div class="clearer"></div>
-
-            <!-- BREADCRUMBS -->
-            <?php if($conf['breadcrumbs']){ ?>
-              <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
-            <?php } ?>
-            <?php if($conf['youarehere']){ ?>
-              <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
-            <?php } ?>
 
             <div class="clearer"></div>
             <hr class="a11y" />
         </div></div><!-- /header -->
 
+        <div id="dokuwiki__navigation"><div class="pad">
+            <?php tpl_include_page('navigation') ?>
+            <div class="clearer"></div>
+        </div></div>
 
         <div class="wrapper">
 
             <!-- ********** ASIDE ********** -->
             <div id="dokuwiki__aside"><div class="pad include">
-                <?php tpl_include_page(tpl_getConf('sidebarID')) /* includes the given wiki page */ ?>
+                <div class="searchform">
+                    <?php tpl_searchform() ?>
+                </div>
+
+                    <?php
+                       if($_SERVER['REMOTE_USER']){
+                            echo '<div id="wiki__tools">';
+
+                            echo '<ul>';
+                            tpl_action('edit', 1, 'li');
+                            tpl_action('history', 1, 'li');
+                            tpl_action('backlink', 1, 'li');
+                            tpl_action('subscribe', 1, 'li');
+                            tpl_action('recent', 1, 'li');
+                            tpl_action('admin', 1, 'li');
+                            tpl_action('profile', 1, 'li');
+                            tpl_action('login', 1, 'li');
+                            echo '</ul>';
+
+                            echo '<p class="logininfo">';
+                            tpl_userinfo();
+                            echo '</p>';
+
+                            echo '</div>';
+                        }else{
+                            ?>
+                            <div id="wiki__login">
+                            <form action="" method="post" >
+                                <input type="hidden" name="do" value="login" />
+                                <label for="user__name">Username</label> <input type="text" name="u" id="user__name" /><br />
+                                <label for="pass__word">Password</label> <input type="password" name="p" id="pass_word" /><br />
+
+                                <input type="checkbox" id="remember__me" name="r" value="1" /><label for="remember__me">Remember me</label>
+                                <input type="submit" value="Login" class="button" />
+                            </form>
+                            </div>
+                    <?php } ?>
+                <hr />
+                <?php tpl_include_page('sidebar') ?>
                 <div class="clearer"></div>
             </div></div><!-- /aside -->
 
             <!-- ********** CONTENT ********** -->
             <div id="dokuwiki__content"><div class="pad">
+
+                <!-- BREADCRUMBS -->
+                <?php if($conf['breadcrumbs']){ ?>
+                  <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
+                <?php } ?>
+                <?php if($conf['youarehere']){ ?>
+                  <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
+                <?php } ?>
+
+
+
                 <?php tpl_flush() /* flush the output buffer */ ?>
                 <?php @include(dirname(__FILE__).'/pageheader.html') /* include hook */ ?>
 
@@ -131,25 +137,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
             <div class="clearer"></div>
             <hr class="a11y" />
 
-            <!-- PAGE ACTIONS -->
-            <?php if ($showTools): ?>
-                <div id="dokuwiki__pagetools">
-                    <h3 class="a11y"><?php echo tpl_getLang('page_tools') ?></h3>
-                    <ul>
-                        <?php
-                            tpl_action('edit', 1, 'li');
-                            if (tpl_getConf('discussionNS')) {
-                                _tpl_discussion(tpl_getConf('discussionNS'),1,'li',tpl_getConf('discussNSreverse'));
-                            }
-                            tpl_action('history', 1, 'li');
-                            tpl_action('backlink', 1, 'li');
-                            tpl_action('subscribe', 1, 'li');
-                            tpl_action('revert', 1, 'li');
-                            tpl_action('top', 1, 'li');
-                        ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
+
         </div><!-- /wrapper -->
 
         <!-- ********** FOOTER ********** -->
@@ -158,7 +146,12 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
             <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
         </div></div><!-- /footer -->
 
-        <?php @include(dirname(__FILE__).'/footer.html') /* include hook */ ?>
+
+        <div id="wikisym__footer"><div class="pad">
+            &copy; 2010 The International Symposium on Wikis and Open collaboration<br />
+            Powered by <a href="http://www.cosmocode.de">CosmoCode GmbH</a> and <a href="http://www.dokuwiki.org">DokuWiki</a>
+        </div></div>
+
     </div></div><!-- /site -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
