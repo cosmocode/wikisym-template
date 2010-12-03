@@ -50,19 +50,20 @@ body {
         float: right;
         position: relative;
         display: block;
+        border-left: 1px solid __border__;
     }
     #dokuwiki__aside .pad {
-        margin: 0 1.5em 0 0;
+        margin: 0 0 0 1.5em;
     }
 
     /* make content wider when there's no sidebar */
     .mode_show #dokuwiki__content {
         float: left;
-        margin-right: -16em; /* right negative margin: width of sidebar (#dokuwiki__aside) */
+        margin-right: -17.5em; /* right negative margin: width of sidebar (#dokuwiki__aside) */
         width: 100%;
     }
     .mode_show #dokuwiki__content .pad {
-        margin-right: 16em; /* right positive margin: width of sidebar (#dokuwiki__aside) */
+        margin-right: 17.5em; /* right positive margin: width of sidebar (#dokuwiki__aside) */
     }
 
 #dokuwiki__footer {

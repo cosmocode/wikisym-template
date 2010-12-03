@@ -1,0 +1,93 @@
+/* General stuff */
+div.dokuwiki input.edit,
+div.dokuwiki button,
+div.dokuwiki input.button {
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: 0.2em;
+    margin: 0.1em;
+}
+
+input,
+textarea,
+button {
+    border: 1px solid #999;
+    background-color: __background__;
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body div.dokuwiki input.button,
+html>body div.dokuwiki button.button {
+    background:  __background__ url(images/buttonshadow.png) repeat-x bottom;
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body div.dokuwiki input.edit,
+html>body div.dokuwiki textarea.edit {
+    background:  __background__ url(images/inputshadow.png) repeat-x top;
+}
+
+div.dokuwiki form.btn_secedit input.button {
+    margin-top: -1em;
+    font-size: 0.8em;
+}
+
+button.pickerbutton {
+    border: none;
+    background: transparent;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 1px;
+}
+
+/* Search form */
+#dokuwiki__aside div.searchform {
+    margin-bottom: 2em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#dokuwiki__aside div.searchform input#qsearch__in {
+    width: 9.5em;
+}
+
+
+/* Login form */
+#wiki__login input.button {
+    float: right;
+}
+
+#wiki__login label.block {
+    font-weight: normal;
+    text-align: left;
+    display: block;
+    clear: right;
+    line-height: 1.8em;
+}
+
+#wiki__login label.remember {
+    line-height: 2.2em;
+    clear: right;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+#wiki__login input.edit {
+    width: 9em;
+    float: right;
+}
+
+#wiki__login p {
+    margin-top: 1.5em;
+    font-size: 0.8em;
+}
+
+#wiki__login p.resendpwd {
+    float: left;
+}
+
+#wiki__login p.register {
+    text-align: right;
+    float: right;
+}
+

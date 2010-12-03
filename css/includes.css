@@ -1,4 +1,5 @@
-/**
- * This file provides styles for included seperate html files
- * (added through "include hooks").
- */
+
+#dokuwiki__aside .include {
+    font-size: 0.9em;
+}
+

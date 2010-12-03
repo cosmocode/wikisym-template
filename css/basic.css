@@ -29,15 +29,14 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 caption, legend {
-    font-family: Constantia, Utopia, Lucidabright, Lucida, Georgia, serif;
     font-weight: bold;
-    color: __text_neu__;
+    color: __text__;
     background-color: inherit;
     padding: 0;
-    clear: left; /* ideally 'both', but problems with toc */
+    clear: both; /* ideally 'both', but problems with toc - we have no toc*/
 }
 
-h1 { font-size: 2.25em;  margin: 0 0 0.444em; }
+h1 { font-size: 2.25em;  margin: 0 0 0.444em; color: #495d52}
 h2 { font-size: 1.5em;   margin: 0 0 0.666em; }
 h3 { font-size: 1.125em; margin: 0 0 0.888em; }
 h4 { font-size: 1em;     margin: 0 0 1.0em; }
@@ -177,6 +176,7 @@ pre, code, samp, kbd {
 }
 pre {
     overflow: auto;
+    padding: 0.5em;
 }
 
 blockquote {

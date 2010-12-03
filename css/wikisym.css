@@ -1,3 +1,7 @@
+/**
+ * This makes most adjustments to make the site look like wikisym
+ */
+
 /* Header */
 #dokuwiki__header p.claim {
     text-align: center;
@@ -50,6 +54,10 @@
     padding: 0.1em 0;
 }
 
+#dokuwiki__navigation a {
+    color: #495d52;
+}
+
 #dokuwiki__navigation ul {
     padding: 0;
 }
@@ -58,7 +66,39 @@
     float: left;
 }
 
-/* Footer */
+#dokuwiki__navigation li:first-child {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+/* Breadcrumbs */
+div.dokuwiki div.breadcrumbs {
+    margin-bottom: 2em;
+}
+
+div.dokuwiki div.breadcrumbs span.bchead {
+    display: none;
+}
+
+div.dokuwiki div.breadcrumbs a {
+    color: __text__;
+    font-size: 1em;
+    font-family: serif; //FIXME
+}
+
+/* Wiki Tools */
+#wiki__tools p {
+    font-size: 0.8em;
+}
+
+
+/* Footers */
+#dokuwiki__footer {
+    font-size: 0.8em;
+    padding: 1em 0 0.5em 0;
+}
+
+
 #wikisym__footer {
     text-align: right;
     border-top: 8px solid __border__;

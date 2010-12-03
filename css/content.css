@@ -53,6 +53,12 @@
     background-color: __border__;
 }
 
+.dokuwiki hr {
+    color: __border__;
+    width: 80%;
+    margin: 2em auto;
+}
+
 
 /*____________ code ____________*/
 

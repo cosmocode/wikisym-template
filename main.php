@@ -64,7 +64,7 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
         <div class="wrapper">
 
             <!-- ********** ASIDE ********** -->
-            <div id="dokuwiki__aside"><div class="pad include">
+            <div id="dokuwiki__aside"><div class="pad">
                 <div class="searchform">
                     <?php tpl_searchform() ?>
                 </div>
@@ -92,18 +92,34 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
                         }else{
                             ?>
                             <div id="wiki__login">
-                            <form action="" method="post" >
-                                <input type="hidden" name="do" value="login" />
-                                <label for="user__name">Username</label> <input type="text" name="u" id="user__name" /><br />
-                                <label for="pass__word">Password</label> <input type="password" name="p" id="pass_word" /><br />
+                                <form action="" method="post" >
+                                    <input type="hidden" name="do" value="login" />
+                                    <label for="user__name" class="block">
+                                        Username
+                                        <input type="text" name="u" id="user__name" class="edit" />
+                                    </label>
+                                    <label for="pass__word" class="block">
+                                        Password
+                                        <input type="password" name="p" id="pass_word" class="edit" />
+                                    </label>
 
-                                <input type="checkbox" id="remember__me" name="r" value="1" /><label for="remember__me">Remember me</label>
-                                <input type="submit" value="Login" class="button" />
-                            </form>
+                                    <label for="remember__me" class="remember">
+                                        <input type="checkbox" id="remember__me" name="r" value="1" />
+                                        Remember me
+                                    </label>
+
+                                    <input type="submit" value="Login" class="button" />
+                                </form>
+                                <div class="clearer"></div>
+                                <p class="resendpwd"><a href="<?php echo wl($ID,array('do'=>'resendpwd'))?>">Forgot your Password ▸</a></p>
+                                <p class="register"><a href="<?php echo wl($ID,array('do'=>'register'))?>">Register ▸</a></p>
+                                <div class="clearer"></div>
                             </div>
                     <?php } ?>
                 <hr />
-                <?php tpl_include_page('sidebar') ?>
+                <div class="include">
+                    <?php tpl_include_page('sidebar') ?>
+                </div>
                 <div class="clearer"></div>
             </div></div><!-- /aside -->
 
