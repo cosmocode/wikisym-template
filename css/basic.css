@@ -19,7 +19,7 @@ html, body {
     padding: 0;
 }
 body {
-    font: normal 100%/1.4 Frutiger, "Frutiger Linotype", Univers, Calibri, Myriad, "Liberation Sans", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: normal 100%/1.4 sans-serif;
     /* default font size: 100% => 16px; 93.75% => 15px; 87.5% => 14px; 81.25% => 13px; 75% => 12px */
     text-align: left;
 }
@@ -36,8 +36,8 @@ caption, legend {
     clear: both; /* ideally 'both', but problems with toc - we have no toc*/
 }
 
-h1 { font-size: 2.25em;  margin: 0 0 0.444em; color: #495d52}
-h2 { font-size: 1.5em;   margin: 0 0 0.666em; }
+h1 { font-size: 1.9em;  margin: 0 0 0.526em; color: __greenish__; font-family: Verdana, sans-serif;}
+h2 { font-size: 1.5em;   margin: 0 0 0.666em; font-weight: normal; }
 h3 { font-size: 1.125em; margin: 0 0 0.888em; }
 h4 { font-size: 1em;     margin: 0 0 1.0em; }
 h5 { font-size: .875em;  margin: 0 0 1.1428em; }

@@ -5,11 +5,11 @@
 /* Header */
 #dokuwiki__header p.claim {
     text-align: center;
-    color: #424242;
     font-size: 1.1em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 2em;
+    font-family: Trebuchet, sans-serif;
 }
 
 #dokuwiki__header h1 {
@@ -18,9 +18,9 @@
 
 #dokuwiki__header div.more {
     height: 200px;
-    background: transparent url(pix/bridge.png) no-repeat 320px top;
+    background: transparent url(pix/bridge.png) no-repeat 340px top;
     text-align: right;
-    font-family: serif; //FIXME
+    font-family: Georgia, serif;
 }
 
 #dokuwiki__header p.loc {
@@ -40,7 +40,7 @@
 
 /* Navigation */
 #dokuwiki__navigation {
-    font-family: serif; //FIXME
+    font-family: Georgia, serif;
     font-size: 1.6em;
     border-top: 4px solid __border__;
     border-bottom: 4px solid __border__;
@@ -54,8 +54,14 @@
     padding: 0.1em 0;
 }
 
-#dokuwiki__navigation a {
-    color: #495d52;
+#dokuwiki__navigation a:link,
+#dokuwiki__navigation a:visited {
+    color: __greenish__;
+}
+
+#dokuwiki__navigation a:active,
+#dokuwiki__navigation a:hover {
+    color: __greenishlight__;
 }
 
 #dokuwiki__navigation ul {
@@ -83,7 +89,7 @@ div.dokuwiki div.breadcrumbs span.bchead {
 div.dokuwiki div.breadcrumbs a {
     color: __text__;
     font-size: 1em;
-    font-family: serif; //FIXME
+    font-family: Georgia, serif;
 }
 
 /* Wiki Tools */

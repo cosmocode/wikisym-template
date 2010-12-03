@@ -3,3 +3,9 @@
     font-size: 0.9em;
 }
 
+#dokuwiki__aside .include h2 {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.833em;
+}
