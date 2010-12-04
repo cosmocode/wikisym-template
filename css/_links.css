@@ -43,7 +43,8 @@
 }
 /* external link */
 .dokuwiki a.urlextern {
-    background-image: url(images/link_icon.gif);
+    background-image: url(images/link_icon.png);
+    padding: 0 0 0 14px;
 }
 /* windows share */
 .dokuwiki a.windows {
