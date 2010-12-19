@@ -39,12 +39,17 @@
 
 /* Navigation */
 #dokuwiki__navigation {
-    font-family: Georgia, serif;
-    font-size: 1.6em;
     border-top: 4px solid __border__;
     border-bottom: 4px solid __border__;
     margin: 0.5em 0 2em 0;
     background-color: #fafafa;
+
+    // like the claim:
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2em;
+    font-family: Trebuchet, sans-serif;
 }
 
 #dokuwiki__navigation div.pad {
