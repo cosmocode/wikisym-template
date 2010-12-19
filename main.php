@@ -37,7 +37,7 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
         <div id="dokuwiki__header"><div class="pad">
             <p class="claim">7th International Symposium on Wikis and Open Collaboration</p>
 
-            <h1><?php tpl_link(wl(),'<img src="'.DOKU_TPL.'pix/logo.png" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
+            <h1><?php tpl_link(wl(),'<img src="'.DOKU_TPL.'pix/bridgelogo.png" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
             <div class="more">
                 <p class="loc">
                     Mountain View, California<br />
