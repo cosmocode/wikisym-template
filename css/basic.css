@@ -49,7 +49,7 @@ h6 { font-size: .75em;   margin: 0 0 1.333em; }
 
 p, ul, ol, dl, pre, table,
 hr, blockquote, fieldset, address {
-    margin: 0 0 1.4em 0; /* bottom margin = line-height */
+    margin: 0 0 1.5em 0; /* bottom margin = line-height */
     padding: 0;
 }
 
@@ -59,6 +59,7 @@ div {
 }
 
 p, dt, dd, td, th, li {
+    line-height: 1.5em;
 }
 
 
@@ -151,6 +152,7 @@ img {
     color: #666;
     background-color: transparent;
     font-style: italic;
+    outline: 0;
 }
 
 hr {

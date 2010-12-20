@@ -28,7 +28,8 @@ html>body div.dokuwiki textarea.edit {
 }
 
 div.dokuwiki form.btn_secedit input.button {
-    margin-top: -1em;
+    margin-top: -1.9em;
+    margin-right: -2.2em;
     font-size: 0.8em;
 }
 

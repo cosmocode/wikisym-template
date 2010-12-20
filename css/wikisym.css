@@ -54,8 +54,7 @@
 
 #dokuwiki__navigation div.pad {
     display: table; //FIXME we need better solution here
-    margin: 0 auto;
-    padding: 0.1em 0;
+    margin: 0.3em auto 0.1em;
 }
 
 #dokuwiki__navigation a:link,

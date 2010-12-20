@@ -185,6 +185,10 @@
     margin-bottom: 0;
 }
 
+#dokuwiki__aside hr {
+    margin: 2em auto !important;
+    width: 100%;
+}
 
 /* content
 ********************************************************************/
