@@ -15,6 +15,12 @@ button {
     background-color: __background__;
 }
 
+#wiki__text {
+    font-size: 16px;
+    line-height: 1.4em;
+    color: #000;
+}
+
 /* nice alphatransparency background except for IE <7 */
 html>body div.dokuwiki input.button,
 html>body div.dokuwiki button.button {
