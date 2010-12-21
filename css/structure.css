@@ -12,6 +12,13 @@ body {
     max-width: 64em;
     padding: 1.4em 1em;
 }
+
+// IE fix
+#IE6 #dokuwiki__site {
+    width: 64em;
+}
+
+
 #dokuwiki__site .site {
 }
 
