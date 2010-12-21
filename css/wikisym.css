@@ -69,6 +69,7 @@
 
 #dokuwiki__navigation ul {
     padding: 0;
+    display: table-row;
 }
 
 #dokuwiki__navigation li {
@@ -78,6 +79,28 @@
 #dokuwiki__navigation li:first-child {
     list-style-type: none;
     margin-left: 0;
+}
+
+/* IE fixes */
+#IE7 #dokuwiki__navigation,
+#IE6 #dokuwiki__navigation {
+    text-align: center;
+}
+
+#IE7 #dokuwiki__navigation ul,
+#IE6 #dokuwiki__navigation ul {
+    display: inline;
+}
+
+#IE7 #dokuwiki__navigation ul li,
+#IE6 #dokuwiki__navigation ul li {
+    float: none;
+    display: inline;
+}
+
+#IE7 #dokuwiki__navigation ul li div,
+#IE6 #dokuwiki__navigation ul li div {
+    display: inline;
 }
 
 /* Breadcrumbs */
